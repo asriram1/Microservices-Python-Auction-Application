@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% if chat_id %}
+            You said: {{ chat_id }}
+        {% endif %}
+
+        <script>
+            chat_id = "{{chat_id}}";
+            magic_key = "{{magic_key}}";
+            if(window.localStorage.getItem(window.chat_id + " session_token")) {
+                location.replace("chat/" + window.chat_id);
+            }
+        </script>
+
+        <meta charset="utf-8" />
+        <title>Join Chat</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
+         <script type="text/javascript" src="{{ url_for('static', filename='join_chat.js') }}"></script>
+
+        <label for="join_chat">username: </label>
+        <input id="name"></input>
+        <button onclick="join_chat();">join chat</button>
+
+    </head>
+    <body>
+
+    </body>
+</html>

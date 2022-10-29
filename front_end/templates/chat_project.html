@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Create Chat</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}" />
+    </head>
+
+    <body>
+        <div id="create_chat_display" display="block">
+            <label for="create_chat">username: </label>
+            <input id="create_chat"></input>
+            <button onclick="create_chat();">create chat</button>
+            <div id="create_chat_success"> </div>
+        </div>
+
+        <div id="chat_room_display">
+            <h2>Chat Messages</h2>
+            <h2>Room Id: <div id="chat_room_display_chat_id"></div></h2>
+
+            <div id = "invite">
+            </div>
+
+            <div id="messages"></div>
+
+            <div id="chat_area">
+                <input type="text" id="fname" name="fname"><br><br>
+                <input type="submit" value="Submit" onclick="send_message();">
+            </div>
+        </div>
+
+        <div id="join_chat_display">
+            <meta charset="utf-8" />
+            <title>Join Chat</title>
+            <label for="join_chat">username: </label>
+            <input id="name"></input>
+            <button onclick="join_chat();">join chat</button>
+        </div>
+
+        <script type="text/javascript" src="{{ url_for('static', filename='chat_project.js') }}"></script>
+        <script> window.chat_id = "{{chat_id}}"; </script>
+        <script> window.magic_key = "{{ magic_key}}"; </script>
+        <script> create_chat_display(); </script>
+        {% if magic_key %}
+            <script> join_chat_display(); </script>
+        {% elif chat_id %}
+            <script> chat_room_display(); </script>
+        {% endif %}
+    </body>
+</html>
+

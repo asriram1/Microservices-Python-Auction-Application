@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>add item</title>
+    </head>
+
+    <body>
+        <div id="add_item_display" display="block">
+            <label for="add_item">item name: </label>
+            <input id="add_item"></input>
+            <button onclick="add_item();">add_item</button>
+            <div id="add_item_success"> </div>
+        </div>
+      </body>
+
+<script type="text/javascript" src="{{ url_for('static', filename='add_item.js') }}"></script>
+</html>
+

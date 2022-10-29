@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>add item</title>
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='chat_room.css')}}" />
+
+    </head>
+
+    <body>
+        <div id="main_page_display" >
+            <button onclick="show_items();">show items</button>
+            <button onclick="add_item_display();">add new item</button>
+            <button onclick="show_user_information();">show user information</button>  
+            <button onclick="show_my_items();">my items</button>    
+            <button onclick="logout();">logout</button> 
+        </div>
+
+        <div id="show_items_display">
+            <input id="search_item"></input>
+            <button onclick="search_item_by_category();">search by category</button>
+            <button onclick="search_item_by_keyword();">search by keyword</button>
+            
+            <div id="inner_show_items_display">
+            </div>
+        </div>
+
+        <div id="add_item_display">
+            <label>name: </label>
+            <input id="item_name"></input>
+            <br></br>
+
+            <label>start_time: </label>
+            <input id="item_start_time"></input>
+            <br></br>
+
+            <label>end_time: </label>
+            <input id="item_end_time"></input>
+            <br></br>
+
+            <label>category: </label>
+            <input id="item_category"></input>
+            <br></br>
+
+            <label>start_bidding_price: </label>
+            <input id="item_start_bidding_price"></input>
+            <br></br>
+
+            <label>buyout_price: </label>
+            <input id="item_buyout_price"></input>
+            <br></br>
+
+            <button onclick="add_item();">add</button>
+
+            <div id="add_item_success"> </div>
+        </div>
+
+        <div id="show_user_information_display">
+            
+        </div>
+
+        <div id="show_my_items_display">
+            
+        </div>
+
+	</body>
+
+<script type="text/javascript" src="{{ url_for('static', filename='main_page.js') }}"></script>
+</html>
+

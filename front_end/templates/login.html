@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>add item</title>
+    </head>
+
+    <body>
+        <div id="login_display" >
+            <label>email: </label>
+            <input id="login_email"></input>
+            <br></br>
+            <label>password: </label>
+            <input id="login_password"></input>
+            <br></br>
+
+            <button onclick="login();">login</button>
+            <button onclick="register();">register</button>
+            <!-- <button onclick="forget_password();">forgot password?</button> -->
+            <div id="login_error"> </div>
+                
+        </div>
+
+		<div id="show_auction_items">
+		</div>
+	</body>
+
+<script type="text/javascript" src="{{ url_for('static', filename='login.js') }}"></script>
+</html>
+
